@@ -1,0 +1,21 @@
+use master
+if exists(select * from sysdatabases where name='Student_DB')
+drop database Student_DB
+create database Student_DB
+
+use Student_DB
+
+if exists(select * from sysobjects where name='UserInfo')
+drop table UserInfo
+create table UserInfo
+(
+  id int primary key identity(1,1),
+  name varchar(20) not null
+)
+
+
+if exists(select * from sysobjects where name='Achievement')
+drop table Achievement
+create table Achievement
+(
+)
